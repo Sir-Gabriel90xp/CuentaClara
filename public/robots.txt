@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /guias/
+Sitemap: https://cuenta-clara-gabriel.dafanymejia.chatgpt.site/sitemap-index.xml

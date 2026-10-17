@@ -1,0 +1,23 @@
+{
+  "name": "cuenta-clara",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "build": "astro build && pagefind --site dist",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "check:source": "node scripts/check-source.mjs",
+    "check:dist": "node scripts/validate-dist.mjs",
+    "build:portable": "node scripts/build-portable.mjs && pagefind --site dist"
+  },
+  "dependencies": {
+    "astro": "^5.0.0",
+    "@astrojs/mdx": "^4.0.0",
+    "@astrojs/sitemap": "^3.0.0",
+    "@fontsource/inter": "^5.0.0",
+    "@fontsource/source-serif-4": "^5.0.0"
+  },
+  "devDependencies": {
+    "pagefind": "^1.0.0"
+  }
+}

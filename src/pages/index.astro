@@ -1,0 +1,76 @@
+---
+import Base from '../layouts/Base.astro';
+import Cards from '../components/Cards.astro';
+import '../styles/home.css';
+import {getCollection} from 'astro:content';
+
+const guides=await getCollection('guias');
+---
+<Base>
+  <div class="hero">
+    <div>
+      <span class="eyebrow">Tu dinero. Tus decisiones. Más claridad.</span>
+      <h1>Las cuentas claras.<br/>La vida, un poco<br/><span style="color:#8a6500">más sencilla.</span></h1>
+      <p>Entiende lo que envías, lo que pagas y lo que puedes ahorrar. Herramientas prácticas y guías en español, a tu ritmo.</p>
+      <div class="buttons">
+        <a class="button" href="/herramientas/">Hacer mis cuentas <span>↗</span></a>
+        <a class="button secondary" href="#guias">Explorar las guías</a>
+      </div>
+      <div class="trust">
+        <span>✓ Herramientas gratuitas</span>
+        <span>✓ Sin registro</span>
+        <span>✓ Tus datos se quedan contigo</span>
+      </div>
+    </div>
+    <figure class="hero-family">
+      <img
+        src="/familia-planificando-finanzas.png"
+        alt="Una familia sonriente planifica sus finanzas mientras consulta Cuenta Clara en una computadora."
+        width="1536"
+        height="1024"
+        fetchpriority="high"
+      />
+      <figcaption>Planificar en familia también empieza por entender tus números.</figcaption>
+    </figure>
+  </div>
+  <div class="strip">
+    <span>Hecho para tu día a día</span>
+    <strong>⇄ Remesas</strong>
+    <strong>▤ Crédito</strong>
+    <strong>↗ Ahorro</strong>
+    <strong>◴ Presupuesto</strong>
+    <span>En español, sin complicaciones.</span>
+  </div>
+  <section>
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Menos dudas, más números</span>
+        <h2>Haz espacio para lo que importa.</h2>
+        <p>Cuatro herramientas para poner tus decisiones en perspectiva.</p>
+      </div>
+      <a href="/herramientas/">Ver herramientas →</a>
+    </div>
+    <Cards/>
+  </section>
+  <section id="guias">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Entender es el primer paso</span>
+        <h2>Una guía para cada pregunta.</h2>
+        <p>Borradores del Plan Maestro disponibles para revisión editorial.</p>
+      </div>
+      <a href="/buscar/">Buscar una guía →</a>
+    </div>
+    <div class="cards guides">
+      {guides.slice(0,3).map((g,i)=><a class="card guide" href={'/guias/'+g.id+'/'}><span class="guide-num">0{i+1} ↗</span><span class="eyebrow">{g.data.category.replaceAll('-',' ')}</span><h3>{g.data.title}</h3><p>{g.data.description}</p><span class="arrow">Leer borrador · {g.data.reading} min →</span></a>)}
+    </div>
+  </section>
+  <div class="editorial">
+    <div>
+      <span class="eyebrow" style="color:#d8c487">La confianza empieza con transparencia</span>
+      <h2>Explicamos de dónde sale cada cuenta.</h2>
+      <p>Fórmulas visibles, ejemplos identificados y fuentes a mano. El contenido del Plan Maestro conserva su estado de borrador hasta completar la revisión humana.</p>
+    </div>
+    <a href="/metodologia/">Conoce la metodología ↗</a>
+  </div>
+</Base>

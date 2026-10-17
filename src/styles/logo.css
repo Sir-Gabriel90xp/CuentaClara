@@ -1,0 +1,30 @@
+.header .logo,
+.footer-grid .logo {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  max-width: 100%;
+  padding: 0;
+}
+
+.logo img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.header .logo {
+  width: 200px;
+}
+
+.footer-grid .logo {
+  width: 180px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 850px) {
+  .header .logo {
+    width: 150px;
+  }
+}

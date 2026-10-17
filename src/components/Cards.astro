@@ -1,0 +1,4 @@
+---
+import {tools} from '../data';const {items=tools}=Astro.props;
+---
+<div class="cards">{items.map(t=><a class="card" href={'/herramientas/'+t.slug+'/'}><span class="icon" aria-hidden="true">{t.icon}</span><h3>{t.short}</h3><p>{t.description}</p><span class="arrow">Abrir calculadora <span aria-hidden="true">↗</span></span></a>)}</div>

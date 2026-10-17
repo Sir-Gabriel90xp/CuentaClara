@@ -1,0 +1,4 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Buscar guías y herramientas" noindex><div class="page-intro"><span class="eyebrow">Encuentra tu próximo paso</span><h1>¿Qué quieres aclarar?</h1><p>Busca remesas, crédito, ahorro o documentos. Atajo de teclado: /.</p></div><div id="search"></div><link href="/pagefind/pagefind-ui.css" rel="stylesheet"/><script is:inline src="/pagefind/pagefind-ui.js"></script><script is:inline>window.addEventListener('DOMContentLoaded',()=>{if(window.PagefindUI)new PagefindUI({element:'#search',showSubResults:true,translations:{placeholder:'Buscar en Cuenta Clara',zero_results:'No hay resultados para [SEARCH_TERM]',clear_search:'Borrar',search_label:'Buscar',many_results:'[COUNT] resultados para [SEARCH_TERM]',one_result:'Un resultado para [SEARCH_TERM]'}})});</script></Base>
